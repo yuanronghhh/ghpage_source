@@ -1,0 +1,172 @@
+$INPUT_LENGTH: 100%;
+$CODE_BACKGROUND: #565656;
+$MAIN_COLOR: grey;
+$INPUT_BORDER: 1px;
+$PLACEHOLDER_COLOR: #d3d3d3; //placeholder颜色
+$BODY_COLOR: #f3f3f3;        //主颜色
+$ICON_SIZE: 25px;            //图标大小
+$ICON_COLOR: #ffffff;        //图标颜色
+
+.submit {
+  font-weight: bold;
+}
+h1 {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0.5em;
+}
+.alert-show {
+  z-index: 10;
+  bottom: 10%;
+  width: 80%;
+  color: $BODY_COLOR;
+  padding: 5px 0px;
+  margin: 0% 10%;
+  background-color: #d2d2d2;
+  text-align: center;
+  position: fixed; 
+}
+.tip {
+  text-align: right;
+}
+.tip-left {
+  float: left;
+}
+.input-control {
+  margin-left: 10px;
+
+}
+.input-group {
+  margin-top: 25px;
+}
+.main-body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 41px 0px;
+}
+.main-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.btn, button {
+  margin: 0px;
+  height: 30px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: #f9f99f4a;
+}
+.form-label {
+  color: $ICON_COLOR;
+}
+.btn.submit {
+  margin: 25px 0px;
+  background-color: $ICON_COLOR;
+  color: $MAIN_COLOR;
+  width: 100%;
+}
+.block {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.input-group {
+  width: 100%;
+  display: inline-flex;
+}
+.input-control {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  color: darkcyan;
+}
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  li {
+    line-height: 1.5em;
+  }
+}
+
+textarea, input {
+  display: -webkit-box;
+  border: none;
+  padding: 0px 2%;
+  outline: none;
+  line-height: 1;
+  height: 30px;
+  .input-control {
+    width: $INPUT_LENGTH;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0 20%;
+  padding: 0;
+  font-size: 15px;
+  background: $BODY_COLOR;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: consolas,microsoft yahei,youyuan;
+  height: 100%;
+}
+
+pre {
+  padding: 0.5em;
+  overflow-x:auto;
+  color: white;
+  background: $CODE_BACKGROUND;
+}
+::-webkit-input-placeholder {
+  color: $PLACEHOLDER_COLOR;
+}
+.footer {
+  position: fixed;
+  text-align: center;
+  padding: 1em;
+  bottom: 0;
+  color: $MAIN_COLOR;
+  left: 0;
+  right: 0;
+}
+p {
+  margin: 0.5em;
+  line-height: 1.5em;
+}
+
+code>p {
+  margin: 0;
+  padding: 0;
+}
+code {
+  color: white;
+  background: $CODE_BACKGROUND;
+  font-family: consolas;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  thead {
+    border-bottom: solid 1px #bfbfbf;
+  } 
+  th, td {
+    padding: 1em;
+  }
+}
+blockquote {
+  background: #f9f99f4a;
+  padding: 0.5em;
+  margin: 0em;
+}
+
+@import 'effect.scss'

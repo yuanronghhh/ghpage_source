@@ -1,0 +1,26 @@
+.nv:hover {
+  background: #f1f1f1;
+}
+
+.at-list:hover {
+  text-shadow: 1px 1px 1px #c7c7c7;
+}
+
+.search:hover {
+  box-shadow: 0 0 10px 0 rgba(96, 96, 96, 0.4);
+}
+
+.detail:hover, #preview-place:hover {
+  box-shadow: 0 0 10px 0 rgba(96,96,96,.4);
+}
+
+code::selection, p::selection, li::selection, h2::selection {
+  color: #000000;
+  background: #f9f99f;
+}
+
+@media screen and (max-width:800px ) {
+  body {
+    margin: 0px;
+  }
+}

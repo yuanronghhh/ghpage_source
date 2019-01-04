@@ -1,0 +1,46 @@
+Vim教程
+
+
+## 前言
+网络上面已经有很多Vim教程了, 不过还是想写一点， 自己做个笔记.
+这篇文章也是在gVim中编写的, gVim软件原始链接来自百度贴吧, 我这里也放一下网盘链接
+
+贴吧链接: [点击](http://c.tieba.baidu.com/p/3363987355?lp=5028&mo_device=1)
+百度网盘分享: [点击](http://pan.baidu.com/s/1kUPfocZ) 提取码: fqe7
+
+>软件为是32位的, 如果需要使用它的增强功能, 例如Python, 请更换成32位的或自行编译
+>一个vim.
+
+## 介绍
+- Vi是古老的编辑器, VIM的意思是`VIM - Vi IMproved`, Vim是它的增强版.
+- Vim 读音, 手册(`:h credit`)上面是这样说的:
+
+```txt
+Vim is pronounced as one word, like Jim, not vi-ai-em.  It's written with a
+capital, since it's a name, again like Jim.
+
+Vim读音就像一个单词, 例如Jim, 并非vi-ai-em, 它的首字母大写, 因为他是一个名字, 像
+Jim一样.
+```
+
+## 需要注意
+1. 文章里面注意大小写, 输入的时候不要忽略了字符(例如冒号`:`), 也要注意用英文符号.
+2. 请输入前, 请查清楚自己命令做了什么.
+3. 使用`ctrl-[`根据光标查找帮助, `ctrl-o`返回。
+4. 使用`ctrl-u`撤销, ESC退到普通模式.
+
+## 开始
+很多人看到Vim, 开始保存都报错, 就直接放弃了, 那是因为不了解它, 你需要看看提示,
+它不允许你随便退出, 你需要输入`:wq`, w为`write`, q为`quit`, 才能退出.
+
+请打开您的编辑器, 输入`:vimtutor`, 开始您的入门学习。
+>因为gVim是便携版, 没有这个命令, 所以需要到`gVimPortable\App\vim\vim74`文件夹下
+>找到一个`vimtutor.bat`的文件, 请先将它复制一份出来, 然后将副本拖放到gVim编辑器开
+>始学习。您可以在共享盘里面找到一个`reference.pdf`的文件, 他是Vim的中文翻译，版本是7.4
+
+> 英文基础好的, 通过可以通过`:h user`查看, 然后学习.
+
+## 其他
+1. 这篇文章的文件可以到哪里下载?
+答: 请看上面的百度分享链接，如果链接失效请通知我一下。
+[635044633@qq.com](mailto:635044633@qq.com)
