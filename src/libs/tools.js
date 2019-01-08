@@ -1,3 +1,6 @@
+import PathUtils from './pathUtils'
+import Storage from './storage'
+
 class Tools {
   static getTime (tm) {
     let yr = tm.getFullYear()
@@ -11,12 +14,31 @@ class Tools {
   }
 
   static getFile(path, cb) {
-    window.fetch(path).then((res) => {
-      return res.text()
-    }).then((data) => {
-      return cb(null, data)
-    }).catch((err) => {
-      return cb(err, null)
+    path = PathUtils.toPagePath(path)
+
+    Storage.getItemAsync(path, (err, data) => {
+      if (err) {
+        return cb(err, null)
+      }
+
+      if(data) {
+        return cb(null, data)
+      }
+
+      window.fetch(path).then((res) => {
+        return res.text()
+      }).then((data) => {
+        Storage.setItemAsync(path, data, (err) => {
+          if (err) {
+            return cb(err)
+          }
+
+          return cb(null, data)
+        })
+      }).catch((err) => {
+        err.message = `Failed to fetch ${path}`
+        return cb(err, null)
+      })
     })
   }
 

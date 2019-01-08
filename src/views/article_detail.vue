@@ -1,7 +1,5 @@
 <template>
-  <div id="article-detail">
-    <div v-html="article.content" class="detail"></div>
-  </div>
+  <div v-html="article.content" class="detail"></div>
 </template>
 
 <script>
@@ -52,6 +50,6 @@ export default {
   padding: 1em;
   overflow: hidden;
   border-radius: 10px;
-  margin: 10px 1%;
+  margin: 10px 1% 50px 1%;
 }
 </style>

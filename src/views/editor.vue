@@ -79,11 +79,9 @@ export default {
       this.editor.bt_prev_text = val ? '显示预览' : '编辑'
     },
     timerSave () {
-      let self = this
       clearInterval(window.save_tm)
       window.save_tm = setInterval(() => {
-        Logger.debug('save_tm', window.save_tm)
-        Storage.setItem('edit_article', self.editor.text)
+        Storage.setItem('edit_article', this.editor.text)
       }, 3000)
     },
     onEdit (evt) {
@@ -96,7 +94,8 @@ export default {
     },
     recoverStorage () {
       let data = Storage.getItem('edit_article')
-      if(!data) {
+
+      if (!data) {
         data = this.editor.text
       }
       this.updateData(data)

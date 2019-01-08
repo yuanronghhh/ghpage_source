@@ -55,7 +55,7 @@ export default {
       this.article_list = data
     },
     getArticleList () {
-      const path = "/static/articles/list.json"
+      const path = "static/articles/list.json"
       let key = this.$route.params.category
 
       if(key) {
@@ -94,7 +94,7 @@ export default {
 
 $PROFILE_IMG: 60px;
 #article-list {
-  margin: 0px 1%;
+  margin: 0px 1% 50px 1%;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 10px 0 rgba(96, 96, 96, 0.4);
   border-radius: 10px;

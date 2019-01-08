@@ -31,7 +31,10 @@ export default {
 
       node = node.toUpperCase()
 
-      let arr = article_list[node]
+      let arr = article_list[node].filter((ele, idx) => {
+        delete ele["create_at"]
+        return ele
+      })
 
       if(key.match(" ")) {
         let keys = key.split(" ")

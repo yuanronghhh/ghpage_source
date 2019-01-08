@@ -1,6 +1,5 @@
 import article_list from '@/views/article_list.vue'
 import article_detail from '@/views/article_detail'
-import config from '@/views/config'
 
 const detail_routes = [{
   path: '/',
@@ -13,10 +12,6 @@ const detail_routes = [{
   meta: {
     keep_alive: true
   }
-}, {
-  path: '/config/:id',
-  name: 'config',
-  component: config
 }, {
   path: '/articles/detail',
   name: 'article_detail',

@@ -1,26 +1,18 @@
+require('./localforage')
+const localForage = window.localforage
+
 class Storage {
   /**
    * 操作持久化存储类
    */
 
-  static cache(path, data) {
-    var has_data = window.localStorage.hasOwnProperty(path)
-
-    if (has_data) {
-      return JSON.parse(window.localStorage.getItem(path))
-    } else {
-      if (data) {
-        const result = JSON.stringify(data)
-
-        window.localStorage.setItem(path, result)
-      }
-
-      return null
-    }
+  static clearAll() {
+    localForage.clear()
+    window.localStorage.clear()
   }
 
-  static hasItem(key) {
-    return window.localStorage.getItem(key)
+  static hasKey(key) {
+    return window.localStorage.hasOwnProperty(key)
   }
 
   static setItem(key, value) {
@@ -31,9 +23,16 @@ class Storage {
     return JSON.parse(window.localStorage.getItem(key))
   }
 
-  static cleanCache() {
-    window.localStorage.clear()
+  static setItemAsync(key, value, cb) {
+    localForage.setItem(key, value, (err) => {
+      return cb(err)
+    })
+  }
+
+  static getItemAsync(key, cb) {
+    localForage.getItem(key, cb)
   }
 }
+localForage.clear()
 
 export default Storage

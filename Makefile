@@ -7,4 +7,7 @@ build:
 dev:
 	@npm run dev
 
+ghpage: build
+	@cp -r ./dist/ghpage/* ./dist/
+
 .PHONY: genlist build dev

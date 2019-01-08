@@ -16,40 +16,32 @@
 <script>
 import Theme from '../libs/theme'
 
+let nav_list = [{
+  path: "/list/record",
+  name: "RECORD"
+}, {
+  path: "/list/develop",
+  name: "DEVELOP"
+}, {
+  path: "/articles/detail?article_path=/static/articles/about/aboutme.md",
+  name: "ABOUT"
+}]
+
 export default {
   data () {
     return {
       mode: "MODE",
-      nav_list: [{
-        path: "/list/record",
-        name: "RECORD"
-      }, {
-        path: "/list/develop",
-        name: "DEVELOP"
-      }, {
-        path: "/articles/detail?article_path=/static/articles/about/aboutme.md",
-        name: "ABOUT"
-      }]
+      nav_list: nav_list
     }
   },
   methods: {
     switchCss () {
       Theme.auto_switch = 'off'
+      let themes = Theme.themes
+      let idx = themes.indexOf(Theme.theme)
+      let next = idx + 1 >= themes.length ? 0 : idx + 1
 
-      switch(Theme.theme) {
-        case 'default':
-          Theme.switchTheme('dark')
-          break
-        case 'dark':
-          Theme.switchTheme('light')
-          break
-        case 'light':
-          Theme.switchTheme('dark')
-          break
-        default:
-          Theme.switchTheme('default')
-          break
-      }
+      Theme.switchTheme(themes[next])
     }
   }
 }

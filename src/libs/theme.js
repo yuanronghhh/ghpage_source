@@ -1,26 +1,28 @@
-import Logger from '../libs/logger'
 import config from '../config/config'
+import Logger from '../libs/logger'
 
 let themes = {
   light: require('../assets/css/light.scss'),
   dark: require('../assets/css/dark.scss')
+  /* glass: require('../assets/css/glass.scss') */
 }
 
 class Theme {
   static switchTheme(theme) {
 
-    if(this.theme === theme) {
+    if(this.theme !== '' && this.theme === theme) {
       return
     }
 
     this.disableTheme(theme)
 
-    if(themes.hasOwnProperty(theme)) {
-      let rs = themes[theme]
+    if(!themes.hasOwnProperty(theme)) {
+      return
+    }
 
-      if (!rs) {
-        return
-      }
+    let succ = themes[theme]
+    if (!succ) {
+      return
     }
 
     config.theme = this.theme = theme
@@ -45,7 +47,7 @@ class Theme {
       name = mt[1]
 
       if (name === theme) {
-        Logger.debug('[swith theme]', name)
+        Logger.debug("[switch theme]", name)
         sty.disabled = false
       } else {
         sty.disabled = true
@@ -54,7 +56,8 @@ class Theme {
   }
 }
 
-Theme.theme = 'default'
+Theme.themes = Object.keys(themes)
+Theme.theme = ''
 Theme.auto_switch = 'on'
 
 export default Theme
