@@ -14,6 +14,10 @@ class Tools {
   }
 
   static getFile(path, cb) {
+    if(!path) {
+      throw new Error("[Error] not find path")
+    }
+
     path = PathUtils.toPagePath(path)
 
     Storage.getItemAsync(path, (err, data) => {

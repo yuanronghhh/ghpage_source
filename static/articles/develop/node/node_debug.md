@@ -76,7 +76,7 @@ break in F:\tmp\tmp.js:4
 自己未尝试过，不作介绍了
 ```
 
-### 第三方调试库
+## 第三方调试库
 ### 使用node-inspector调试(仅支持chrome, opera)
 1. 项目目录打开cmd, 启动监听`node --debug-brk app.js`
 2. 新开一个cmd输入`node-inspector`

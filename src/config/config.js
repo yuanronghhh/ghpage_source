@@ -3,7 +3,7 @@ import HookUtils from '../libs/hookUtils'
 
 let config = {
   theme: 'light',
-  is_debug: true,
+  is_debug: false,
   get: (key) => {
     return this[key]
   },

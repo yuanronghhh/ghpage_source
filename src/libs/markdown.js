@@ -1,12 +1,13 @@
 require('./highlight')
 require('./remarkable')
 require('./autosize')
-const hljs = window.hljs;
-const Remarkable = window.Remarkable;
+const hljs = window.hljs
+const Remarkable = window.Remarkable
+const toc = require('markdown-toc')
 
 class MarkDown {
   constructor () {
-    this.engine = new Remarkable({
+    let option = {
       html: true,
       xhtmlOut: true,
       breaks: true,
@@ -23,26 +24,56 @@ class MarkDown {
           console.log(err)
         }
       }
+    }
+
+    this.engine = new Remarkable(option).use((remarkable) => {
+      remarkable.renderer.rules.heading_open = (tokens, idx) => {
+        return '<h' + tokens[idx].hLevel + ' id=' + toc.slugify(tokens[idx + 1].content) + '>';
+      };
+
+      remarkable.renderer.rules.heading_open = (tokens, idx) => {
+        return '<h' + tokens[idx].hLevel + ' id=' + toc.slugify(tokens[idx + 1].content) + '>';
+      };
+
+      remarkable.renderer.rules.link_open = function (tokens, idx, options /* env */) {
+        var title = tokens[idx].title ? (' title="' + toc.slugify(tokens[idx].title) + '"') : '';
+        var target = options.linkTarget ? (' target="' + options.linkTarget + '"') : ''
+        var hash = window.location.hash;
+        var query = hash.substr(hash.indexOf("?")).substring(1).replace(/&anchor=[^&]*/, '');
+        return '<a href="#/articles/detail?' + query + '&anchor=' + toc.slugify(tokens[idx].href.replace('#', '')) + '"' + title + target + '>'
+      }
     })
   }
 
-  render (data) {
-    let group = data.match(/^{[^}]*?}/)
+  deleteInfo(raw) {
+    let group = raw.match(/^{[^}]*?}/)
 
     if(group != null && group.length > 0) {
-      data = data.substr(group[0].length)
+      raw = raw.substr(group[0].length)
     }
 
-    return this.engine.render(data)
+    return raw
   }
 
-  editor (input, preview) {
-    this.update = function () {
-      this.renderToHtml(input.value, preview)
+  parseInfo(raw) {
+    let group = raw.match(/^{[^}]*?}/)
+
+    if(group != null && group.length > 0) {
+      return JSON.parse(group[0])
     }
 
-    input.markDownEditor = this
-    this.update()
+    return null
+  }
+
+  renderToc(data) {
+    let tdata = toc(data).content
+    return tdata
+  }
+
+  render (raw) {
+    let data = this.deleteInfo(raw)
+    data = this.engine.render(data)
+    return data
   }
 }
 

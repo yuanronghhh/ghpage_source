@@ -33,10 +33,7 @@ const routes = [{
 
 const router = new Router({
   mode: 'hash',
-  routes: routes,
-  scrollBehavior (to, from, savedPosition) {
-    return savedPosition || { x: 0, y: 0 }
-  }
+  routes: routes
 })
 
 router.beforeUnload = (evt) => {
