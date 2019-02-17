@@ -1,15 +1,9 @@
 /* theme: dark */
-body {
-  background-color: #434343 !important;
-}
+$DARK_COLOR: #00000066;
+$LIGHT_TEXT: #dedede;
 
 .footer {
   color: white;
-}
-
-.detail, #preview-place {
-  background-color: #323232 !important;
-  color: #dedede;
 }
 
 #nav {
@@ -25,7 +19,7 @@ a {
 }
 
 div#article-list {
-  background-color: #323232 !important;
+  background-color: $DARK_COLOR !important;
 }
 
 span.nv:hover {
@@ -33,13 +27,12 @@ span.nv:hover {
 }
 
 textarea {
-  background-color: #323232;
   color: #dedede;
 }
 
 input {
-  background-color: #323232;
-  color: #fdfdfd;
+  background-color: $DARK_COLOR !important;
+  color: white !important;
 }
 
 pre, code {
@@ -55,6 +48,42 @@ blockquote {
   background: #4661614a !important;
 }
 
-div#fix-button {
+div.fix-button {
   background: #000000a6 !important;
+}
+
+#edit-place {
+  background-color: $DARK_COLOR !important;
+  color: $LIGHT_TEXT;
+}
+
+input::-webkit-input-placeholder {
+  color: grey;
+}
+
+div.detail {
+  background: $DARK_COLOR;
+  color: $LIGHT_TEXT;
+}
+
+body {
+  background: #484848;
+}
+
+.calendar {
+  background: $DARK_COLOR !important;
+  color: white !important;
+}
+.day-box {
+  border: transparent !important;
+}
+
+.to-day {
+  border: transparent !important;
+  background:  #ab0000 !important;
+}
+
+.bold-day {
+  border: transparent !important;
+  background: black !important;
 }

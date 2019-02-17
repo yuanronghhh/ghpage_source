@@ -3,7 +3,7 @@ $CODE_BACKGROUND: #565656;
 $MAIN_COLOR: grey;
 $INPUT_BORDER: 1px;
 $PLACEHOLDER_COLOR: #d3d3d3; //placeholder颜色
-$BODY_COLOR: #f3f3f3;        //主颜色
+$BODY_COLOR: transparent;        //主颜色
 $ICON_SIZE: 25px;            //图标大小
 $ICON_COLOR: #ffffff;        //图标颜色
 
@@ -16,41 +16,6 @@ h1 {
   margin: 0;
   padding: 0.5em;
 }
-.alert-show {
-  z-index: 10;
-  bottom: 10%;
-  width: 80%;
-  color: $BODY_COLOR;
-  padding: 5px 0px;
-  margin: 0% 10%;
-  background-color: #d2d2d2;
-  text-align: center;
-  position: fixed; 
-}
-.tip {
-  text-align: right;
-}
-.tip-left {
-  float: left;
-}
-.input-control {
-  margin-left: 10px;
-
-}
-.input-group {
-  margin-top: 25px;
-}
-.main-body {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  margin: 41px 0px;
-}
-.main-bg {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
 .btn, button {
   margin: 0px;
   height: 30px;
@@ -58,9 +23,6 @@ h1 {
   outline: none;
   border: none;
   background: #f9f99f4a;
-}
-.form-label {
-  color: $ICON_COLOR;
 }
 .btn.submit {
   margin: 25px 0px;
@@ -99,34 +61,35 @@ textarea, input {
   outline: none;
   line-height: 1;
   height: 30px;
-  .input-control {
-    width: $INPUT_LENGTH;
-  }
-}
-
-html {
-  height: 100%;
+  background: transparent;
 }
 
 body {
   margin: 0 20%;
   padding: 0;
   font-size: 15px;
-  background: $BODY_COLOR;
+  /* background: url('../assets/images/hello.jpg'); */
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
-  font-family: consolas,microsoft yahei,youyuan;
-  height: 100%;
+  font-family: sans-serif, microsoft yahei,youyuan;
 }
 
-pre {
-  padding: 0.5em;
-  overflow-x:auto;
+code {
   color: white;
   background: $CODE_BACKGROUND;
 }
+pre {
+  padding: 10px;
+}
+
+pre, code {
+  overflow-x:auto;
+  color: white;
+  background: $CODE_BACKGROUND;
+  font-family: sans-serif, microsoft yahei,youyuan;
+}
+
 ::-webkit-input-placeholder {
   color: $PLACEHOLDER_COLOR;
 }
@@ -142,16 +105,6 @@ pre {
 p {
   margin: 0.5em;
   line-height: 1.5em;
-}
-
-code>p {
-  margin: 0;
-  padding: 0;
-}
-code {
-  color: white;
-  background: $CODE_BACKGROUND;
-  font-family: consolas;
 }
 table {
   border-collapse: collapse;
@@ -189,4 +142,4 @@ blockquote {
   background-color:#bbb;
 }
 
-@import 'effect.scss'
+@import "effect.scss";

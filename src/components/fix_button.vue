@@ -1,7 +1,7 @@
 <template>
-  <div id="fix-button" @click="toggleToc">
-    <div class="index" v-html="html" v-show="show_toc"></div>
-    <div class="fix-bar" v-show="!show_toc">目录</div>
+  <div class="fix-button" @click="toggleToc">
+    <div class="index" v-html="html" v-show="show_content"></div>
+    <div class="fix-bar" v-show="!show_content">{{ label }}</div>
   </div>
 </template>
 
@@ -9,41 +9,38 @@
 export default {
   data () {
     return {
-      show_toc: false
+      show_content: false
     }
   },
   props: {
-    html: String
+    html: String,
+    label: String
   },
   methods: {
     toggleToc () {
-      if(this.show_toc) {
-        this.show_toc = false
+      if(!this.show_content && this.html.length > 0) {
+        this.show_content = true
       } else {
-        this.show_toc = true
+        this.show_content = false
       }
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-div#fix-button {
+<style lang="scss">
+.fix-button {
   position: fixed;
   right: 23%;
-  bottom: 40px;
   background: #ffffffeb;
   padding: 10px;
   z-index: 10;
   border: solid 1px black;
   border-radius: 10px;
-  .index {
-    overflow: auto;
-    height: 400px;
-  }
+  cursor: pointer;
 }
 
 @media screen and (max-width:800px ) {
-  div#fix-button {
+  .fix-button {
     right: 3%;
   }
 }

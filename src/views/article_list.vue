@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="list">
     <nv-search :showResult="showResult"></nv-search>
     <div id="article-list">
 
@@ -95,7 +95,7 @@ export default {
 $PROFILE_IMG: 60px;
 #article-list {
   margin: 0px 1% 50px 1%;
-  background: rgba(255, 255, 255, 0.8);
+  background: #ffffffe0;
   box-shadow: 0 0 10px 0 rgba(96, 96, 96, 0.4);
   border-radius: 10px;
 
@@ -130,7 +130,7 @@ $PROFILE_IMG: 60px;
       }
 
       .profile-time {
-        font-size: 0.6em;
+        font-size: 0.8em;
         color: $MAIN_COLOR;
       }
 

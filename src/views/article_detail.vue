@@ -2,7 +2,8 @@
   <div class="detail">
     <div class="detail-footer">最后更新于: {{ article.update_at | formatTime }}</div>
     <div v-html="article.content"></div>
-    <fix-button :html="article.toc"></fix-button>
+    <div class="fix-button back" @click="back">返回</div>
+    <fix-button class="toc" :html="article.toc" label="目录"></fix-button>
   </div>
 </template>
 
@@ -26,11 +27,18 @@ export default {
   },
   filters: {
     formatTime (tm) {
+      if (!tm) {
+        return '';
+      }
+
       let tc = new TimeConverter(tm)
       return tc.formatDateWithSecond()
     }
   },
   methods: {
+    back() {
+      this.$router.go(-1)
+    },
     toggleToc () {
       this.$children[0].toggleToc()
     },
@@ -84,15 +92,26 @@ export default {
 </script>
 <style lang="scss">
 .detail {
-  background: #ffffff;
+  background: #ffffffe0;
   transition: 0.5s;
   padding: 1em;
   overflow: hidden;
   border-radius: 10px;
   margin: 10px 1% 100px 1%;
+  box-shadow:0 0 10px 0 rgba(96, 96, 96, 0.4);
 }
 .detail-footer {
   text-align: right;
   padding: 10px;
+}
+.toc {
+  .index {
+    overflow: auto;
+    height: 400px;
+  }
+  bottom: 50px;
+}
+.back {
+  bottom: 100px;
 }
 </style>

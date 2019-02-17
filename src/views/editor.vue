@@ -111,7 +111,7 @@ export default {
 #md-prev-button {
   position: absolute;
   right: 20%;
-  font-size: 0.5em;
+  font-size: 0.8em;
   border-radius: 0 10px 0 10px;
 }
 
@@ -136,7 +136,6 @@ export default {
     right: 20%;
     left: 20%;
     border-radius: 10px;
-    background: #ffffff;
 
     #edit {
       height: 100%;
@@ -147,14 +146,16 @@ export default {
       height: 100%;
       font-size: 1em;
       line-height: 1.5em;
-      padding: 0px 2%;
+      border-radius: 10px;
+      padding: 10px 2%;
     }
 
     #preview-place {
       width: 96%;
       height: 100%;
       overflow: auto;
-      padding: 0px 2%;
+      padding: 10px 2%;
+      border-radius: 10px;
     }
   }
 }

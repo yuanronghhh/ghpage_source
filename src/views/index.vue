@@ -38,10 +38,18 @@ export default {
       setInterval(() => {
         const tm = new Date()
         let tc = new TimeConverter(tm)
-        let fest = Calendar.getFestval(tc.tm)
+        const keys = ["lunarFestival", "solarFestival", "term"]
+        const fest = Calendar.getFestval(tc.tm)
+        let fest_str = ''
 
-        if (typeof(fest) !== 'undefined') {
-          self.now = fest
+        keys.forEach((key) => {
+          if (typeof(fest[key]) !== 'undefined') {
+            fest_str += fest[key] + " "
+          }
+        })
+
+        if (fest_str.length > 0) {
+          self.now = fest_str
         } else {
           self.now = tc.formatDateWithSecond()
         }

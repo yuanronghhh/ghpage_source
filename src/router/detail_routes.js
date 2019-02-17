@@ -1,5 +1,6 @@
 import article_list from '@/views/article_list.vue'
-import article_detail from '@/views/article_detail'
+import article_detail from '@/views/article_detail.vue'
+import calender from '@/views/calender.vue'
 
 const detail_routes = [{
   path: '/',
@@ -12,6 +13,10 @@ const detail_routes = [{
   meta: {
     keep_alive: true
   }
+}, {
+  path: '/calender',
+  name: 'calender',
+  component: calender
 }, {
   path: '/articles/detail',
   name: 'article_detail',

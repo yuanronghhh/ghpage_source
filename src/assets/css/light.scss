@@ -1,4 +1,19 @@
 /* theme: light */
+$LIGHT_COLOR: #ffffffe0;
+
 body {
-  background-color: #f3f3f3 !important;
+  background: #f7f7f7;
+}
+
+#edit-place {
+  background: $LIGHT_COLOR !important;
+}
+
+#search_key {
+  background: $LIGHT_COLOR !important;
+  color: black !important;
+}
+
+input::-webkit-input-placeholder {
+  color: #424242;
 }

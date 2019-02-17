@@ -6,7 +6,11 @@ class Calendar {
   }
 
   getFestval(tm) {
-    return this.engine.solarToLunar(tm.year, tm.month, tm.day).lunarFestival
+    return this.engine.solarToLunar(tm.year, tm.month, tm.day)
+  }
+
+  getCalender(year, month) {
+    return this.engine.calendar(year, month)
   }
 }
 

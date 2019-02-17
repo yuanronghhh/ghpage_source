@@ -38,9 +38,21 @@ class MarkDown {
       remarkable.renderer.rules.link_open = function (tokens, idx, options /* env */) {
         var title = tokens[idx].title ? (' title="' + toc.slugify(tokens[idx].title) + '"') : '';
         var target = options.linkTarget ? (' target="' + options.linkTarget + '"') : ''
-        var hash = window.location.hash;
-        var query = hash.substr(hash.indexOf("?")).substring(1).replace(/&anchor=[^&]*/, '');
-        return '<a href="#/articles/detail?' + query + '&anchor=' + toc.slugify(tokens[idx].href.replace('#', '')) + '"' + title + target + '>'
+
+        /* hash url */
+        if (tokens[idx].href.startsWith('#/')) {
+          return '<a href="' + tokens[idx].href + '"' + title + target + '>'
+        }
+
+        /* anchor */
+        let anchor = tokens[idx].href.match(/#\s{0,1}[^\s\\/]*/);
+        if(anchor !== null) {
+          var hash = window.location.hash;
+          var query = hash.substr(hash.indexOf("?")).substring(1).replace(/&anchor=[^&]*/, '');
+          return '<a href="#/articles/detail?' + query + '&anchor=' + toc.slugify(tokens[idx].href.replace('#', '')) + '"' + title + target + '>'
+        }
+
+        return '<a href="' + tokens[idx].href + '"' + title + target + '>'
       }
     })
   }
