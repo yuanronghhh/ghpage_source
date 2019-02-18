@@ -10,6 +10,9 @@ $ICON_COLOR: #ffffff;        //图标颜色
 .submit {
   font-weight: bold;
 }
+img {
+  height: 100%;
+}
 h1 {
   text-align: center;
   font-size: 1.5em;
@@ -105,6 +108,7 @@ pre, code {
 p {
   margin: 0.5em;
   line-height: 1.5em;
+  overflow: auto;
 }
 table {
   border-collapse: collapse;

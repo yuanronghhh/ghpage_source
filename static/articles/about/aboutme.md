@@ -2,13 +2,13 @@
   "title": "关于我",
   "profile": "关于我的简介",
   "create_at": "2017-03-10T12:10:01",
-  "update_at": "2019-02-16T14:27:00"
+  "update_at": "2019-02-17T14:27:00"
 }
 ## 关于我
 
 - 昵称：GreyHound
 - 邮箱：635044633@qq.com
-- 技能: Vim、Git、Blender、Photoshop、Node.js
+- 技能: Vim、Git、Blender、Photoshop、Node.js、Python
 
 如果你有任何问题或建议，可以[@我](mailto:635044633@qq.com)。
 
@@ -26,10 +26,10 @@
 
 ## 关于日历
 [点击进入日历](#/calender)
-[介绍日历](https://yuanronghhh.github.io/ghpage/#/articles/detail?article_path=%2Fstatic%2Farticles%2Fdevelop%2Fnode%2Fcalender_lib.md)
+[介绍日历](#/articles/detail?article_path=%2Fstatic%2Farticles%2Fdevelop%2Fnode%2Fcalender_lib.md)
 
 ## 关于网页
-之前用纯js写的，现在用`Vue`重写了，添加了些东西。[源码](https://github.com/yuanronghhh/ghpage)。
+之前用纯js写的，现在用`Vue`重写了，添加了些东西。[源码](https://github.com/yuanronghhh/ghpage_source)。
 
 这里可以:
 1. 支持文章搜索，显示在文章列表页面的文章可以直接搜索(包括时间)，多个关键词空格分开，支持搜索时间。
