@@ -1,6 +1,7 @@
 require('./highlight')
 require('./remarkable')
 require('./autosize')
+require('highlightjs-line-numbers.js')
 const hljs = window.hljs
 const Remarkable = window.Remarkable
 const toc = require('markdown-toc')
@@ -86,6 +87,14 @@ class MarkDown {
     let data = this.deleteInfo(raw)
     data = this.engine.render(data)
     return data
+  }
+
+  renderNumber() {
+    const pre = document.getElementsByTagName("pre")
+    for(let i = 0; i < pre.length; i++) {
+      let block = pre[i].children[0]
+      hljs.lineNumbersBlock(block)
+    }
   }
 }
 

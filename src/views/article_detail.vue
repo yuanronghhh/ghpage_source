@@ -61,7 +61,7 @@ export default {
 
       Tools.getFile(path, (err, data) => {
         if (err) {
-          Logger.debug(err);
+          Logger.debug(err)
           return
         }
 
@@ -72,6 +72,7 @@ export default {
           toc: md.render(md.renderToc(data)),
           update_at: info ? info.update_at : ""
         }
+
       })
     }
   },
@@ -81,6 +82,7 @@ export default {
   },
   updated() {
     this.scrollAnchor()
+    md.renderNumber()
   },
   watch: {
     "$route" (to, from) {
