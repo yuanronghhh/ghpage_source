@@ -31,7 +31,7 @@ class GenArticles:
         }
         """
         data = ''
-        f = open(fpath.as_posix(), "r")
+        f = open(fpath.as_posix(), "r", encoding="utf-8")
         first = True
 
         while True:
