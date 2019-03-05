@@ -8,8 +8,8 @@
       </div>
       <div id="preview-place" v-html='editor.prev_text' v-show="editor.show_prev"></div>
     </div>
-    <button id="md-prev-button" class="button" @click="swithPrev">{{ editor.bt_prev_text }}</button>
 
+    <button id="md-prev-button" class="button" @click="swithPrev">{{ editor.bt_prev_text }}</button>
   </div>
 </template>
 
@@ -126,9 +126,6 @@ export default {
 }
 
 .editor {
-  width: 100%;
-  height: 100%;
-
   #edit-place {
     position: absolute;
     bottom:0px;
@@ -138,7 +135,8 @@ export default {
     border-radius: 10px;
 
     #edit {
-      height: 100%;
+      height: 98%;
+      margin-top: 2%;
     }
 
     textarea {
@@ -147,7 +145,7 @@ export default {
       font-size: 1em;
       line-height: 1.5em;
       border-radius: 10px;
-      padding: 10px 2%;
+      padding: 10px 2% 0px 2%;
     }
 
     #preview-place {

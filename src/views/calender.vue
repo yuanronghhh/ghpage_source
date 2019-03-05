@@ -81,10 +81,21 @@ export default {
       Logger.debug("setDay", day)
 
       let data = Calendar.getCalender(day.year, day.month)
+
+      if (data.hasOwnProperty('error')) {
+        Logger.debug("error", data.error, data.msg)
+        return
+      }
+
       this.setMonth(data)
       this.cday = data.monthData[day.day - 1]
     },
     setMonth(data) {
+      if (data.hasOwnProperty("error") || data.monthData.length === 0) {
+        Logger.debug(data.msg)
+        return
+      }
+
       this.calendar.monthDays = data.monthDays
       this.calendar.monthData = data.monthData
       this.calendar.GanZhiYear = data.monthData[0].GanZhiYear
@@ -95,6 +106,11 @@ export default {
     },
     todayMonth() {
       let data = Calendar.getCalender(this.today.year, this.today.month)
+      if (data.hasOwnProperty('error')) {
+        Logger.debug("error", data.error, data.msg)
+        return
+      }
+
       this.cday = this.today
       this.setMonth(data)
     },

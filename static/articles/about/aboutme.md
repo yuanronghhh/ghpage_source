@@ -28,6 +28,8 @@
 [点击进入日历](#/calender)
 [介绍日历](#/articles/detail?article_path=%2Fstatic%2Farticles%2Fdevelop%2Fnode%2Fcalender_lib.md)
 
+## 工具集
+
 ## 关于网页
 之前用纯js写的，现在用`Vue`重写了，添加了些东西。[源码](https://github.com/yuanronghhh/ghpage_source)。
 
@@ -35,7 +37,3 @@
 1. 支持文章搜索，显示在文章列表页面的文章可以直接搜索(包括时间)，多个关键词空格分开，支持搜索时间。
 2. 支持主题自动切换。
 3. 支持使用手机浏览和[编辑](#/editor)。
-
-## 感谢
-[Vue-cnodejs](https://github.com/shinygang/Vue-cnodejs)
-[nodeclub](https://github.com/cnodejs/nodeclub)
