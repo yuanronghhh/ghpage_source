@@ -102,7 +102,7 @@ $PROFILE_IMG: 60px;
   .at-list {
     display: inline-block;
     margin: 0.2em 0%;
-    padding: 0.2em 0%; 
+    padding: 0.2em 1%;
     width: 100%;
 
     .at-left {
