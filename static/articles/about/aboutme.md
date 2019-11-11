@@ -8,7 +8,9 @@
 
 - 昵称：GreyHound
 - 邮箱：635044633@qq.com
-- 技能: Vim、Git、Blender、Photoshop、Node.js、Python
+- 技能： Vim、Git、Blender、Photoshop、Node.js、Python
+- 简介：一名.NET程序员，不过做过Python，Node的开发，对Blender感兴趣就学了基础，
+这里写博客主要想记录一点东西，偶尔才更新。
 
 如果你有任何问题或建议，可以[@我](mailto:635044633@qq.com)。
 
