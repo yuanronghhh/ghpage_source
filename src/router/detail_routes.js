@@ -1,6 +1,8 @@
 import article_list from '@/views/article_list.vue'
 import article_detail from '@/views/article_detail.vue'
 import calender from '@/views/calender.vue'
+import transcoder from '@/views/transcoder.vue'
+import formatter from '@/views/formatter.vue'
 
 const detail_routes = [{
   path: '/',
@@ -13,6 +15,14 @@ const detail_routes = [{
   meta: {
     keep_alive: true
   }
+}, {
+  path: '/tools/formatter',
+  name: 'formatter',
+  component: formatter
+}, {
+  path: '/tools/transcoder',
+  name: 'transcoder',
+  component: transcoder
 }, {
   path: '/calender',
   name: 'calender',

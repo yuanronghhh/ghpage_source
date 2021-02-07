@@ -102,7 +102,7 @@ $PROFILE_IMG: 60px;
   .at-list {
     display: inline-block;
     margin: 0.2em 0%;
-    padding: 0.2em 1%;
+    /* padding: 0.2em 1%; */
     width: 100%;
 
     .at-left {
@@ -115,7 +115,7 @@ $PROFILE_IMG: 60px;
 
       .pre-text {
         text-align: center;
-        padding: 14px;
+        padding: 12px;
         color: white;
         font-size: 25px;
       }
@@ -140,7 +140,6 @@ $PROFILE_IMG: 60px;
         text-overflow: ellipsis;
         overflow: hidden;
         margin-right: 10%;
-        height: 2.5em;
       }
     }
   }

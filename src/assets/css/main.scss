@@ -60,7 +60,7 @@ ul {
 textarea, input {
   display: -webkit-box;
   border: none;
-  padding: 0px 2%;
+  padding: 0px 5px;
   outline: none;
   line-height: 1;
   height: 30px;
@@ -71,22 +71,21 @@ body {
   margin: 0 20%;
   padding: 0;
   font-size: 15px;
-  /* background: url('../assets/images/hello.jpg'); */
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   font-family: sans-serif, microsoft yahei,youyuan;
 }
 
-code {
-  color: white;
-  background: $CODE_BACKGROUND;
+div p code, li code {
+  color: black;
+  font-weight: bold;
 }
 pre {
   padding: 10px;
 }
 
-pre, code {
+pre {
   overflow-x:auto;
   color: white;
   background: $CODE_BACKGROUND;

@@ -59,10 +59,11 @@ export default {
 <style lang="scss">
 .search {
   input {
-    width: 80%;
+    width: calc(100% - 90px);
   }
+
   button {
-    width: 20%;
+    width: 80px;
     background: #f9f99f;
   }
 
@@ -70,11 +71,10 @@ export default {
 }
 
 .input-line {
-  margin: 10px 2%;
-  width: 96%;
+  margin: 10px;
+  width: calc(100% - 20px);
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 </style>

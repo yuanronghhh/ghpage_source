@@ -172,7 +172,11 @@ export default {
       let fest = this.getFest(day)
 
       if (fest.length > 0) {
-        return fest[0].substr(0, 3)
+        if (fest.length > 1) {
+          return fest[0].substr(0, 3) + '...'
+        }
+
+        return fest[0].length > 3 ? fest[0].substr(0, 3) + '...' : fest[0]
       } else {
         return day.lunarDayName.substr(0, 3)
       }
@@ -224,6 +228,7 @@ $BOX_WIDTH: 13.5%;
   height: 50px;
   width: $BOX_WIDTH;
   border: solid 1px white;
+  border-radius: 5px;
   cursor: pointer;
   float: left;
 }
@@ -237,7 +242,7 @@ $BOX_WIDTH: 13.5%;
 }
 
 .bold-fest {
-  color: red;
+  color: #993a3a;
 }
 
 .operate {
@@ -247,6 +252,7 @@ $BOX_WIDTH: 13.5%;
 .op-btn {
   border: solid 1px black;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .set-day {
