@@ -1,6 +1,6 @@
 $INPUT_LENGTH: 100%;
 $CODE_BACKGROUND: #565656;
-$MAIN_COLOR: grey;
+$MAIN_COLOR: darkcyan;
 $INPUT_BORDER: 1px;
 $PLACEHOLDER_COLOR: #d3d3d3; //placeholder颜色
 $BODY_COLOR: transparent;        //主颜色
@@ -25,7 +25,6 @@ h1 {
   cursor: pointer;
   outline: none;
   border: none;
-  background: #f9f99f4a;
 }
 .btn.submit {
   margin: 25px 0px;

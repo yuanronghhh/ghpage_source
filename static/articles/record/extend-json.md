@@ -1,0 +1,50 @@
+{
+  "title": "extend-json开发库",
+  "profile": "一个扩展JSON的库",
+  "create_at": "2021-02-08T00:00:00",
+  "update_at": "2021-02-08T00:00:00"
+}
+# extend-json库
+
+## 前言
+一个简单的扩展`JSON`库，扩展了`JSON`的功能，就更容易表达树形结构了。
+
+许多时候，表达树形结构的时候，JSON使用`Children`作为一个属性来表示父子关系。
+但很多时候嵌套会比较深，很容易分不清数据和`Children`位置，所以， 
+这里使用`<>`放到键的后面作为数据的存储，以减少层级关系, 并扩展了`JSON`的一些功能
+。例子如下：
+```json
+{
+  Window<class:"top", id:"topWindow">: {
+    Panel<class:"panel",height:80,width:100>: {
+      Button<class:"btn1", @{event:"clicked"}:"on_click">: null
+    }
+  }
+}
+```
+
+## 使用方法
+```c
+#include <stdbool.h>
+#include "glib.h"
+#include "ExtendJson.h"
+
+static void test_mutiple_bytes_string(void) {
+  gchar *str = "[\"汉字\", {age: 2}]";
+  EJError *error = NULL;
+  gchar *out = NULL;
+  EJValue *value = ej_parse(&error, str);
+  // TEST_ASSERT_NULL(error);
+  // TEST_ASSERT_NOT_NULL(value);
+
+  // TEST_ASSERT_TRUE(ej_print_value(value, &out));
+  // TEST_ASSERT_EQUAL_STRING(out, "[\"汉字\",{\"age\":2}]");
+
+  g_free(out);
+  ej_free_value(value);
+}
+
+int main() {
+  return test_mutiple_bytes_string();
+}
+```

@@ -7,6 +7,7 @@
         <textarea @input="onEdit" @drop="dragDrop" v-model="editor.text"></textarea>
       </div>
       <div id="preview-place" v-html='editor.prev_text' v-show="editor.show_prev"></div>
+      <fix-button class="toc" :html="editor.toc" label="目录" v-show="editor.show_prev"></fix-button>
     </div>
 
     <button id="md-prev-button" class="button" @click="swithPrev">{{ editor.bt_prev_text }}</button>
@@ -18,10 +19,12 @@ import Storage from '../libs/storage'
 import md from '../libs/markdown'
 import nvNav from '../components/nav.vue'
 import Logger from '../libs/logger'
+import fixButton from '../components/fix_button'
 
 export default {
   components: {
-    nvNav
+    nvNav,
+    fixButton
   },
   data () {
     return {
@@ -29,7 +32,7 @@ export default {
         text: '# 提示  \n' +
 '## 注意事项  \n' +
 '1. markdown每3秒自动保存，大小不能超过4M  \n' +
-'2. 因为`linux`下创建时间无法获取，所以可以在文件前面json对象, 保留文件创建时间和标题等信息  \n\n' +
+'2. 因为`linux`下创建时间无法获取，所以可以在文件前面写json信息, 保留文件创建时间和标题等信息  \n\n' +
 '例如: \n' +
 '```javascript\n' +
 '{\n' +
@@ -42,7 +45,8 @@ export default {
 '3. 支持在编辑模式下将文件拖入浏览器编辑。\n',
         prev_text: '',
         show_prev: false,
-        bt_prev_text: '显示预览'
+        bt_prev_text: '显示预览',
+        toc: ''
       }
     }
   },
@@ -79,17 +83,29 @@ export default {
       this.editor.bt_prev_text = val ? '显示预览' : '编辑'
     },
     timerSave () {
-      clearInterval(window.save_tm)
-      window.save_tm = setInterval(() => {
-        Storage.setItem('edit_article', this.editor.text)
-      }, 3000)
     },
     onEdit (evt) {
       let data = evt.target.value
+      Storage.setItem('edit_article', this.editor.text)
       this.updateData(data)
+    },
+    scrollAnchor () {
+      const anchor = this.$route.query.anchor
+      let anc = document.getElementById(anchor)
+
+      Logger.debug("[anchor]", anchor)
+      if (anchor === null || anc === null) {
+        return
+      }
+
+      anc.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      })
     },
     updateData (data) {
       this.editor.text = data
+      this.editor.toc = md.render(md.renderToc(data))
       this.editor.prev_text = md.render(data)
     },
     recoverStorage () {
@@ -100,6 +116,14 @@ export default {
       }
       this.updateData(data)
       this.timerSave()
+    }
+  },
+  updated() {
+    md.renderNumber()
+  },
+  watch: {
+    "$route" (to, from) {
+      this.scrollAnchor()
     }
   },
   created () {
@@ -166,6 +190,14 @@ export default {
 
   button#md-prev-button {
     right: 0;
+  }
+}
+
+.toc {
+  bottom: 50px;
+  .index {
+    height: 450px;
+    overflow: auto;
   }
 }
 </style>

@@ -58,6 +58,6 @@ class Theme {
 
 Theme.themes = Object.keys(themes)
 Theme.theme = ''
-Theme.auto_switch = 'on'
+Theme.auto_switch = config.auto_switch
 
 export default Theme

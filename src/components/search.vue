@@ -64,7 +64,6 @@ export default {
 
   button {
     width: 80px;
-    background: #f9f99f;
   }
 
   box-shadow:0 0 10px 0 rgba(96, 96, 96, 0.4);

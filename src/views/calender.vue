@@ -10,9 +10,11 @@
       </div>
       <div class="operate">
         <div class="set-day">设置日期: <input @input="setDay" class="op-btn" placeholder="格式: 20180102"></input></div>
-        <span class="op-btn prev-month" @click="prevMonth()">上一个月</span>
-        <span class="op-btn today-month" @click="todayMonth()">今天</span>
-        <span class="op-btn next-month" @click="nextMonth()">下一个月</span>
+        <div class="set-date">
+          <span class="op-btn prev-month" @click="prevMonth()">上一个月</span>
+          <span class="op-btn today-month" @click="todayMonth()">今天</span>
+          <span class="op-btn next-month" @click="nextMonth()">下一个月</span>
+        </div>
       </div>
     </div>
 
@@ -234,15 +236,16 @@ $BOX_WIDTH: 13.5%;
 }
 
 .to-day {
-  border: solid 1px red;
+  background: #e8e8e8;
 }
 
 .bold-day {
-  border: solid 1px black;
+  border: solid 1px #d7d7d7;
+
 }
 
 .bold-fest {
-  color: #993a3a;
+  color: #769e93;
 }
 
 .operate {
@@ -253,6 +256,7 @@ $BOX_WIDTH: 13.5%;
   border: solid 1px black;
   margin-right: 10px;
   cursor: pointer;
+  display: inline-block;
 }
 
 .set-day {

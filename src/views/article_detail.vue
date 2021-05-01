@@ -78,7 +78,9 @@ export default {
   },
   created () {
     const path = this.$route.query.article_path
-    this.getArticle(path)
+    if(path) {
+      this.getArticle(path)
+    }
   },
   updated() {
     this.scrollAnchor()
@@ -106,13 +108,15 @@ export default {
   text-align: right;
   padding: 10px;
 }
+
 .toc {
-  .index {
-    overflow: auto;
-    height: 400px;
-  }
   bottom: 50px;
+  .index {
+    max-height: 450px;
+    overflow: auto;
+  }
 }
+
 .back {
   bottom: 100px;
 }

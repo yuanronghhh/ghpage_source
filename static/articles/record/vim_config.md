@@ -2,7 +2,7 @@
   "title": "VIM配置文件",
   "profile": "个人VIM配置备份",
   "create_at": "2018-12-31T12:10:01",
-  "update_at": "2018-12-31T16:38:01"
+  "update_at": "2021-05-01T16:31:00"
 }
 # VIM配置文件
 
@@ -12,20 +12,18 @@ behave xterm
 runtime ftplugin/man.vim
 
 set nocompatible
-lang messages en_US.UTF-8
 
+syntax on
 filetype on
 filetype plugin on
 filetype indent on
-
 set showmatch
-set encoding=utf-8
 set guifont=Fixedsys\ Excelsior\ 3.01\ 12
-
-set guioptions=a,b,r
+set guioptions=r
+"set spell
 set fileformats=unix,dos,mac
-set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 set fileencoding=utf-8
+set fileencodings=utf-8,gb18030,gb2312,cp936,gbk,ucs-bom,shift-jis
 set showcmd
 set number
 set nowrap
@@ -40,7 +38,7 @@ set hlsearch
 set expandtab
 set incsearch
 set list
-set lcs=tab:>-,trail:-
+set lcs=tab:>-,trail:-,nbsp:~
 set ruler
 set cursorline
 set cursorcolumn
@@ -52,18 +50,41 @@ set smartindent
 set nobackup
 set backspace=start,indent,eol
 set whichwrap+=<,>,h,l
-set colorcolumn=120
+set colorcolumn=80
 set scrolloff=3
 set novisualbell
 set t_vb=
 set fdm=syntax
-set fdl=1
-set undofile
-set undodir=~/.vim/undodir
 set t_Co=256
-set columns=150 lines=50
+if has("gui_running")
+  set columns=120 lines=30
+endif
+set undofile
+set ssop=blank,buffers,curdir,folds,tabpages,terminal
 
-syntax on
+let g:vim_home = expand("~/.vim")
+let &undodir = g:vim_home."/undodir"
+let g:vim_plugin = g:vim_home."/plugins"
+let g:vim_ropepath = g:vim_home."/rope"
+let g:vim_session = g:vim_home."/session"
+
+function LeaveSession(sfile)
+  let l:sfile = a:sfile
+  if strlen(a:sfile) == 0
+     let l:sfile = "s.vim"
+  endif
+
+  exec "mks! ".g:vim_session."/".l:sfile
+endfunction
+
+function LoadSession(sfile)
+  let l:sfile = a:sfile
+  if strlen(a:sfile) == 0
+     let l:sfile = "s.vim"
+  endif
+
+  exec "source ".g:vim_session."/".l:sfile
+endfunction
 
 function! ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
@@ -72,6 +93,7 @@ function! ClosePair(char)
         return a:char
     endif
 endfunction
+
 inoremap < <><ESC>i
 inoremap > <c-r>=ClosePair('>')<CR>
 inoremap ( ()<ESC>i
@@ -92,49 +114,37 @@ nnoremap <C-k> gT
 nnoremap <C-l> <C-w>l
 nnoremap <C-s> :w<cr>
 
+map <F2> :%!python3 -m json.tool<cr>
 map <F3> :tabnew<cr>
 map <F4> :close<cr>
-map <f5> :PymodeRun<cr>
 
 let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=0
 let NERDTreeAutoDeleteBuffer=1
-let NERDTreeCascadeOpenSingleChildDir=0
 
 let g:pymode = 1
 let g:pymode_lint = 0
 let g:pymode_folding = 0
 let g:pymode_rope = 1
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope_completion = 0
+let g:pymode_rope_project_root = g:vim_ropepath
+let g:pymode_rope_autoimport = 1
 let g:pymode_python = 'python3'
-let g:colorizer_startup = 0
 
-let g:ale_python_pylint_change_directory = 0
-let g:ale_c_parse_compile_commands = 1
-let g:ale_c_build_dir_names = ['build_linux', 'build_win']
-
-let g:SuperTabDefaultCompletionType = "context"
-
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_min_num_of_chars_for_completion = 0
-let g:ycm_key_invoke_completion = '<Tab>'
-
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-Plugin 'https://github.com/w0rp/ale'
-Plugin 'https://github.com/majutsushi/tagbar.git'
-"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+call vundle#begin(g:vim_plugin)
 Plugin 'https://github.com/python-mode/python-mode.git'
-Plugin 'https://github.com/lilydjwg/colorizer.git'
-Plugin 'vim-ext'
+Plugin 'https://github.com/majutsushi/tagbar.git'
 call vundle#end()
 
 if has("gui_running")
-   colorscheme materialtheme
-else
-   colorscheme molokai
+    colorscheme materialtheme
+  else
+    colorscheme molokai
 endif
+
+au! BufRead *.vs,*.vert,*.glsl,*.frag :set ft=c
+au! BufRead *.vue :set ft=html
+au! BufRead *.vala :set ft=cpp
+au! BufRead *.cst :set ft=javascript
+command! -nargs=? OpenSession :call LoadSession("<args>")
+command! -nargs=? SaveSession :call LeaveSession("<args>")
 ```

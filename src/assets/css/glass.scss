@@ -1,7 +1,9 @@
 /* theme: glass */
+$GLASS_COLOR: #00000066;
 
 body {
-  background:grey !important;
+  /* background:grey !important; */
+  background: url('../images/hello.jpeg');
 }
 
 .footer {
@@ -9,8 +11,8 @@ body {
 }
 
 .detail, #preview-place {
-  background-color: #ffffff52 !important;
-  color: #252525;
+  background-color: #00000073 !important;
+  color: white;
 }
 
 #nav {
@@ -26,7 +28,7 @@ a {
 }
 
 div#article-list {
-  background-color: #32323273 !important;
+  background-color: #00000073 !important;
 }
 
 span.nv:hover {
@@ -54,4 +56,32 @@ a:hover {
 
 blockquote {
   background: #4661614a !important;
+}
+
+div.fix-button {
+  background: #000000a6 !important;
+}
+
+
+.calendar {
+  background: $GLASS_COLOR !important;
+  color: white !important;
+}
+.day-box {
+  border: transparent !important;
+}
+
+.to-day {
+  border: transparent !important;
+  background:  #ab0000 !important;
+}
+
+.bold-day {
+  border: transparent !important;
+  background: black !important;
+}
+
+
+::-webkit-input-placeholder {
+  color: white;
 }

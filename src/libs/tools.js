@@ -15,7 +15,8 @@ class Tools {
 
   static getFile(path, cb) {
     if(!path) {
-      throw new Error("[Error] not find path")
+      var err = new Error("[Error] not find path")
+      return cb(err)
     }
 
     path = PathUtils.toPagePath(path)

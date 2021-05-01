@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     toggleToc () {
-      if(!this.show_content && this.html.length > 0) {
+      if(!this.show_content && this.html && this.html.length > 0) {
         this.show_content = true
       } else {
         this.show_content = false

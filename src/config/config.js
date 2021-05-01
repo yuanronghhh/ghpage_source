@@ -4,6 +4,7 @@ import HookUtils from '../libs/hookUtils'
 let config = {
   theme: 'light',
   is_debug: false,
+  auto_switch: 'off',
   get: (key) => {
     return this[key]
   },

@@ -49,8 +49,11 @@ class MarkDown {
         let anchor = tokens[idx].href.match(/#\s{0,1}[^\s\\/]*/)
         if(anchor !== null) {
           var hash = window.location.hash
-          var query = hash.substr(hash.indexOf("?")).substring(1).replace(/&anchor=[^&]*/, '')
-          return '<a href="#/articles/detail?' + query + '&anchor=' + Toc.slugify(tokens[idx].href.replace('#', '')) + '"' + title + target + '>'
+          var qp = hash.indexOf("?")
+          var query = hash.substr(qp).substring(1).replace(/anchor=[^&]*/, '')
+          var path = qp > -1 ? hash.substr(0, qp) : hash
+          query = query ? query + '&': ''
+          return '<a href="' + path + '?' + query + 'anchor=' + Toc.slugify(tokens[idx].href.replace('#', '')) + '"' + title + target + '>'
         }
 
         return '<a href="' + tokens[idx].href + '"' + title + target + '>'
