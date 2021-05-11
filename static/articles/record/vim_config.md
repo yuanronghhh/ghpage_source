@@ -17,6 +17,7 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+set clipboard=unnamedplus
 set showmatch
 set guifont=Fixedsys\ Excelsior\ 3.01\ 12
 set guioptions=r
@@ -105,8 +106,6 @@ inoremap " ""<ESC>i
 inoremap ' ''<ESC>i
 inoremap <c-o> <ESC>o
 inoremap { {}<ESC>i
-vnoremap x "_x
-vnoremap y "+y
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> gt

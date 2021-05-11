@@ -131,7 +131,7 @@ $PROFILE_IMG: 60px;
 
       .profile-time {
         font-size: 0.8em;
-        color: $MAIN_COLOR;
+        color: #959595;
       }
 
       .profile-content {

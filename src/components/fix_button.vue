@@ -1,6 +1,6 @@
 <template>
   <div class="fix-button" @click="toggleToc">
-    <div class="index" v-html="html" v-show="show_content"></div>
+    <div class="menu" v-html="html" v-show="show_content"></div>
     <div class="fix-bar" v-show="!show_content">{{ label }}</div>
   </div>
 </template>

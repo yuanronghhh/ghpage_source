@@ -41,7 +41,7 @@ class MarkDown {
         var target = options.linkTarget ? (' target="' + options.linkTarget + '"') : ''
 
         /* hash url */
-        if (tokens[idx].href.startsWith('#/')) {
+        if (tokens[idx].href.startsWith('#/') || tokens[idx].href.startsWith('http')) {
           return '<a href="' + tokens[idx].href + '"' + title + target + '>'
         }
 

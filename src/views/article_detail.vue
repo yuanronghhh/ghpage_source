@@ -2,7 +2,7 @@
   <div class="detail">
     <div class="detail-footer">最后更新于: {{ article.update_at | formatTime }}</div>
     <div v-html="article.content"></div>
-    <div class="fix-button back" @click="back">返回</div>
+    <div class="fix-button back" @click="backTop">顶部</div>
     <fix-button class="toc" :html="article.toc" label="目录"></fix-button>
   </div>
 </template>
@@ -36,8 +36,12 @@ export default {
     }
   },
   methods: {
-    back() {
-      this.$router.go(-1)
+    backTop() {
+      var anc = document.getElementById("nav")
+      anc.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      })
     },
     toggleToc () {
       this.$children[0].toggleToc()
@@ -111,7 +115,7 @@ export default {
 
 .toc {
   bottom: 50px;
-  .index {
+  .menu {
     max-height: 450px;
     overflow: auto;
   }

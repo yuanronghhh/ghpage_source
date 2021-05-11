@@ -7,6 +7,7 @@
         <textarea @input="onEdit" @drop="dragDrop" v-model="editor.text"></textarea>
       </div>
       <div id="preview-place" v-html='editor.prev_text' v-show="editor.show_prev"></div>
+      <div class="fix-button back" @click="backTop" v-show="editor.show_prev">顶部</div>
       <fix-button class="toc" :html="editor.toc" label="目录" v-show="editor.show_prev"></fix-button>
     </div>
 
@@ -56,6 +57,13 @@ export default {
       this.updateData(data)
 
       Logger.debug('[read file]', fname)
+    },
+    backTop() {
+      var anc = document.getElementById("nav")
+      anc.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      })
     },
     dragDrop (evt) {
       evt.stopPropagation();
@@ -131,7 +139,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 #md-prev-button {
   position: absolute;
   right: 20%;
@@ -152,34 +160,46 @@ export default {
 .editor {
   #edit-place {
     position: absolute;
-    bottom:0px;
+    bottom:20px;
     top: 90px;
     right: 20%;
     left: 20%;
     border-radius: 10px;
+    padding-top: 2%;
 
     #edit {
-      height: 98%;
-      margin-top: 2%;
+      height: calc(100% - 20px);
     }
 
     textarea {
       width: 96%;
       height: 100%;
+      padding: 0px 2%;
       font-size: 1em;
       line-height: 1.5em;
       border-radius: 10px;
-      padding: 10px 2% 0px 2%;
     }
 
     #preview-place {
       width: 96%;
       height: 100%;
       overflow: auto;
-      padding: 10px 2%;
+      padding: 0px 2% 0px 2%;
       border-radius: 10px;
     }
   }
+
+}
+.toc {
+  bottom: 50px;
+  .menu {
+    max-height: 450px;
+    overflow: auto;
+  }
+}
+
+.back {
+  bottom: 100px;
 }
 
 @media screen and (max-width:800px ) {
@@ -193,11 +213,4 @@ export default {
   }
 }
 
-.toc {
-  bottom: 50px;
-  .index {
-    height: 450px;
-    overflow: auto;
-  }
-}
 </style>

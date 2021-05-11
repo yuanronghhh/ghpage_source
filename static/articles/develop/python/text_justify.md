@@ -10,8 +10,7 @@ leetcode上的一道题
 
 题目地址: [Text-Justification](https://leetcode.com/problems/text-justification/#)
 ```python
-#!/bin/env python
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 
 """
 words = ["This", "is", "an", "example", "of", "text", "justification."]
@@ -31,8 +30,8 @@ L = 16
 最后一行：
 直接添加空格即可。
 """
-words = ["This", "is", "an","example", "of", "text", "justification."]
-maxWidth = 16
+words = ["This", "is", "an", "example", "of", "text", "justification."]
+maxWidth = 30
 builder = []
 
 
@@ -43,44 +42,66 @@ class Solution(object):
         :type maxWidth: int
         :rtype: List[str]
         """
+        line = []
+
         if not words:
             return builder
-        line = []
-        j = 0
-        for i in range(len(words)):
-            line.append(words[i])
-            l_len = len("".join(line))
-            lsp = maxWidth - l_len
-            get_last = (i == len(words) - 1)
-            if get_last:
-                line[-1] += (" " * lsp)
-                builder.extend(line)
-                return builder
 
-            too_long = l_len + len(words[i + 1]) + j > maxWidth
-            if too_long:
-                n_line = self.append_space(line, lsp)
+        wLen = len(words)
+        i = 0
+        for w in words:
+            i += 1
+            lLen = len("".join(line))
+            minSpace = len(line) - 1
+
+            if lLen + minSpace > maxWidth:
+                if lLen > maxWidth:
+                    line[i-1] = line[0: maxWidth-1]
+
+                builder.append(self.append_space(line, maxWidth))
                 line = []
-                j = 0
-                builder.extend(n_line)
+                continue
 
-            j += 1
+            nextLen = lLen + len(words[i-1]) + minSpace + 1
+            if nextLen > maxWidth:
+                nLine = self.append_space(line, maxWidth)
+                builder.append(nLine)
+                line = []
 
-        print builder
+            if i == wLen:
+                line.append(w)
+                builder.append(" ".join(line) + " " * (maxWidth - len("".join(line))))
+                line = []
+                break
+
+            line.append(w)
+
+        return builder
 
     @staticmethod
-    def append_space(arr, l_space):
-        if len(arr) == 1:
-            arr[0] += l_space * " "
-            return arr
+    def append_space(line, maxWidth):
+        if not line:
+            return ""
 
-        pt, rmd = divmod(l_space, len(arr) - 1)
-        for i in range(len(arr)-1):
-            arr[i] += (" " * pt)
-        for i in range(len(arr)-1):
-            if rmd:
-                arr[i] += " "
-                rmd -= 1
+        minSpace = len(line) - 1
+        lStr = "".join(line)
+        lLen = len(lStr)
+        sLen = maxWidth - lLen
 
-        return arr
+        if minSpace + lLen > maxWidth:
+            raise Exception("Data length %d too long" % (lLen))
+
+        if minSpace > 0:
+            pt, m = divmod(sLen, minSpace)
+            for i in range(0, len(line)-1):
+                line[i] += " " * pt
+
+            line[0] += " " * m
+        else:
+            line[0] += " " * (sLen)
+
+        return "".join(line)
+
+res = Solution().fullJustify(words, maxWidth)
+print("\n".join(res))
 ```
