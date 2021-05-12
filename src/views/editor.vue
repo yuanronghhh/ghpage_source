@@ -4,7 +4,7 @@
 
     <div id="edit-place">
       <div id="edit" v-show="!editor.show_prev">
-        <textarea @input="onEdit" @drop="dragDrop" v-model="editor.text"></textarea>
+        <textarea @input="onEdit" @blur="onBlur" @drop="dragDrop" v-model="editor.text"></textarea>
       </div>
       <div id="preview-place" v-html='editor.prev_text' v-show="editor.show_prev"></div>
       <div class="fix-button back" @click="backTop" v-show="editor.show_prev">顶部</div>
@@ -30,6 +30,7 @@ export default {
   data () {
     return {
       editor: {
+        state: 0,
         text: '# 提示  \n' +
 '## 注意事项  \n' +
 '1. markdown每3秒自动保存，大小不能超过4M  \n' +
@@ -59,8 +60,9 @@ export default {
       Logger.debug('[read file]', fname)
     },
     backTop() {
-      var anc = document.getElementById("nav")
-      anc.scrollIntoView({
+      var anc = document.getElementById("preview-place").getElementsByTagName("h1")
+      if (!anc || anc.length === 0) { return }
+      anc[0].scrollIntoView({
         behavior: "smooth",
         block: "start"
       })
@@ -91,10 +93,20 @@ export default {
       this.editor.bt_prev_text = val ? '显示预览' : '编辑'
     },
     timerSave () {
+      var self = this
+      clearInterval(window.save_tm)
+      window.save_tm = setInterval(() => {
+        if (self.editor.state === 1) {
+          Storage.setItem('edit_article', this.editor.text)
+        }
+      }, 3000)
+    },
+    onBlur(evt) {
+      this.editor.state = 0
     },
     onEdit (evt) {
+      this.editor.state = 1
       let data = evt.target.value
-      Storage.setItem('edit_article', this.editor.text)
       this.updateData(data)
     },
     scrollAnchor () {
