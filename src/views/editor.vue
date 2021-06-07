@@ -98,6 +98,7 @@ export default {
       window.save_tm = setInterval(() => {
         if (self.editor.state === 1) {
           Storage.setItem('edit_article', this.editor.text)
+          self.editor.state = 2
         }
       }, 3000)
     },
