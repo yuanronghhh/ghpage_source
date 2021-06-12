@@ -11,9 +11,9 @@ class PathUtils {
     }
 
     if (path.startsWith('/')) {
-      return '/ghpage' + path
+      return '' + path
     } else {
-      return '/ghpage/' + path
+      return '/' + path
     }
   }
 }
