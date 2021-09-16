@@ -9,12 +9,13 @@
 - 昵称：GreyHound
 - 邮箱：635044633@qq.com
 - 技能： Vim、Git、Node.js、Python
-- 简介：一名.NET程序员，不过做过Python，Node的开发，写博客主要想记录一点东西，偶尔才更新。
+- 简介：一名.NET程序员，做过Python，Node的开发，写博客主要想记录一点东西，偶尔才更新。
 
 如果你有任何问题或建议，可以[@我](mailto:635044633@qq.com)。
 
 ## 关于MarkDown编辑器
-点击这里可以进入[MarkDown编辑器](#/editor),如果你项目也使用了[highlight.js](https://github.com/highlightjs/highlight.js.git) + [Remarkable.js](https://github.com/jonschlinkert/remarkable), 
+点击这里可以进入[MarkDown编辑器](#/editor),
+如果你项目也使用了[highlight.js](https://github.com/highlightjs/highlight.js.git) + [Remarkable.js](https://github.com/jonschlinkert/remarkable), 
 那么可以使用这里的编辑器编辑。
 
 编辑器可以: 
@@ -32,9 +33,10 @@
 ## 工具集
 
 ## 关于网页
-之前用纯js写的，现在用`Vue`重写了，添加了些东西。[源码](https://github.com/yuanronghhh/ghpage_source)。
+用`Vue`编写。源码在这里:[源码](https://github.com/yuanronghhh/ghpage_source)。
 
-这里可以:
-1. 支持文章搜索，显示在文章列表页面的文章可以直接搜索(包括时间)，多个关键词空格分开，支持搜索时间。
+特性:
+1. 支持文章搜索，
+   显示在文章列表页面的文章可以直接搜索(包括时间)，多个关键词空格分开，支持搜索时间。
 2. 支持主题自动切换。
 3. 支持使用手机浏览和[编辑](#/editor)。

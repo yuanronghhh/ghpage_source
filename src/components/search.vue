@@ -1,6 +1,6 @@
 <template>
   <div class="input-line search">
-    <input id="search_key" class="keyword"
+    <input id="search_key" autocomplete="off" class="keyword"
                            type="text" 
                            placeholder="关键字以空格分开"
                            @keypress.tab="clickTab"

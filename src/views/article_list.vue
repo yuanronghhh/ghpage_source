@@ -109,13 +109,14 @@ $PROFILE_IMG: 60px;
       margin: 10px;
       width: $PROFILE_IMG;
       height: $PROFILE_IMG;
-      border-radius: $PROFILE_IMG / 2;
+      border-radius: $PROFILE_IMG / 10;
       background: #707070;
       float: left;
 
       .pre-text {
         text-align: center;
-        padding: 12px;
+        position: relative;
+        top: 14px;
         color: white;
         font-size: 25px;
       }

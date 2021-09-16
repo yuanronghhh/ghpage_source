@@ -227,7 +227,7 @@ $BOX_WIDTH: 13.5%;
 }
 
 .day-box {
-  height: 50px;
+  height: 60px;
   width: $BOX_WIDTH;
   border: solid 1px white;
   border-radius: 5px;

@@ -3,7 +3,9 @@ import os
 from pathlib import Path
 import time
 import json
+import logging
 
+logging.basicConfig(format="%(levelname)s %(message)s", level=logging.DEBUG)
 
 tags = ["RECORD", "DEVELOP", "ABOUT"]
 article_path = "./static/articles"
@@ -30,6 +32,7 @@ class GenArticles:
             "path": "static/articles/develop/git/learn_git.md"
         }
         """
+        logging.debug("Get article: %s" % (fpath.as_posix()))
         data = ''
         f = open(fpath.as_posix(), "r", encoding="utf-8")
         first = True
@@ -47,7 +50,7 @@ class GenArticles:
         if not data:
             return {}
 
-        return json.loads(data, encoding="utf-8")
+        return json.loads(data)
 
     def get_file_info(self, fpath):
         if not fpath.exists():

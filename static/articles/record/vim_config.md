@@ -147,3 +147,6 @@ au! BufRead *.cst :set ft=javascript
 command! -nargs=? OpenSession :call LoadSession("<args>")
 command! -nargs=? SaveSession :call LeaveSession("<args>")
 ```
+
+## 外部链接
+[VIM中文文档](https://github.com/yianwillis/vimcdoc)

@@ -10,25 +10,25 @@
   ],
   "RECORD": [
     {
+      "title": "ubuntu \u7f51\u7edc\u914d\u7f6e\u95ee\u9898",
+      "profile": "ubuntu 18 \u7f51\u7edc\u914d\u7f6e\u95ee\u9898",
+      "create_at": "2020-10-14T20:51:00",
+      "update_at": "2020-10-14T20:51:00",
+      "path": "static/articles/record/ubuntu_network.md"
+    },
+    {
+      "title": "\u6309\u4f4d(bit)\u64cd\u4f5c\u7684\u6280\u5de7\u79ef\u7d2f",
+      "profile": "\u6309\u4f4d\u64cd\u4f5c\u6280\u5de7, \u6bd4\u5982\u5feb\u901f\u53d6\u6a21\u8f6c\u6362\u4e3a\u6309\u4f4d\u4e0e",
+      "create_at": "2021-08-29T00:00:00",
+      "update_at": "2021-08-29T00:00:00",
+      "path": "static/articles/record/bit_skills.md"
+    },
+    {
       "title": "ubuntu\u4f7f\u7528HDMI\u63a5\u53e3",
       "profile": "ubuntu\u4e0bxrandr\u7a0b\u5e8f\u53ef\u4ee5\u76f4\u63a5\u8c03\u7528\u8fdb\u884c\u6295\u5c04\u5c4f\u5e55",
       "create_at": "2017-03-10T12:10:01",
       "update_at": "2018-12-30T12:10:01",
       "path": "static/articles/record/display_connect.md"
-    },
-    {
-      "title": "\u642d\u5efaghpage\u6d4b\u8bd5\u73af\u5883",
-      "profile": "ghpage\u8def\u5f84\u5e26\u524d\u7f00\uff0c\u6240\u4ee5\u642d\u5efa\u4e00\u4e2a\u6a21\u62df\u73af\u5883\u5728\u672c\u5730\u8c03\u8bd5, \u53ea\u6709\u4e00\u4e2ajs\u4ee3\u7801\u6587\u4ef6",
-      "create_at": "2018-12-31T12:10:01",
-      "update_at": "2018-12-31T00:00:00",
-      "path": "static/articles/record/mock_ghpage_server.md"
-    },
-    {
-      "title": "HTTPS \u6d41\u7a0b\u548c\u751f\u6210\u8fc7\u7a0b",
-      "profile": "HTTPS \u751f\u6210\u8fc7\u7a0b",
-      "create_at": "2021-02-06T12:40:00",
-      "update_at": "2021-02-06T12:40:00",
-      "path": "static/articles/record/https_bash.md"
     },
     {
       "title": "\u6d4b\u8bd5MarkDown",
@@ -111,22 +111,8 @@
       "title": "U\u76d8\u6302\u8f7d\u65e0\u6cd5\u6b63\u786e\u663e\u793a\u4e2d\u6587\uff0c\u4e14\u6743\u9650\u4e0d\u591f",
       "profile": "U\u76d8\u91cc\u9762\u7684\u6587\u4ef6\u662f\u5728win\u4e0b\u521b\u5efa\u7684\uff0c\u91cd\u65b0\u5c06\u6302\u8f7d\u5373\u53ef",
       "create_at": "2017-03-10T12:10:01",
-      "update_at": "2018-12-31T16:35:01",
+      "update_at": "2021-06-13T20:55:00",
       "path": "static/articles/record/U_DISK_readonly.md"
-    },
-    {
-      "title": "extend-json\u5f00\u53d1\u5e93",
-      "profile": "\u4e00\u4e2a\u6269\u5c55JSON\u7684\u5e93",
-      "create_at": "2021-02-08T00:00:00",
-      "update_at": "2021-02-08T00:00:00",
-      "path": "static/articles/record/extend-json.md"
-    },
-    {
-      "title": "ubuntu \u7f51\u7edc\u914d\u7f6e\u95ee\u9898",
-      "profile": "ubuntu 18 \u7f51\u7edc\u914d\u7f6e\u95ee\u9898",
-      "create_at": "2020-10-14T20:51:00",
-      "update_at": "2020-10-14T20:51:00",
-      "path": "static/articles/record/ubuntu_netowork.md"
     }
   ],
   "DEVELOP": [
@@ -141,11 +127,39 @@
       "path": "static/articles/develop/linux/nginx_config.md"
     },
     {
+      "title": "\u642d\u5efaghpage\u6d4b\u8bd5\u73af\u5883",
+      "profile": "ghpage\u8def\u5f84\u5e26\u524d\u7f00\uff0c\u6240\u4ee5\u642d\u5efa\u4e00\u4e2a\u6a21\u62df\u73af\u5883\u5728\u672c\u5730\u8c03\u8bd5, \u53ea\u6709\u4e00\u4e2ajs\u4ee3\u7801\u6587\u4ef6",
+      "create_at": "2018-12-31T12:10:01",
+      "update_at": "2018-12-31T00:00:00",
+      "path": "static/articles/develop/linux/mock_ghpage_server.md"
+    },
+    {
+      "title": "HTTPS \u6d41\u7a0b\u548c\u751f\u6210\u8fc7\u7a0b",
+      "profile": "HTTPS \u751f\u6210\u8fc7\u7a0b",
+      "create_at": "2021-02-06T12:40:00",
+      "update_at": "2021-02-06T12:40:00",
+      "path": "static/articles/develop/linux/https_bash.md"
+    },
+    {
       "title": "\u4e00\u4e2a\u53ef\u4ee5\u5feb\u901f\u5207\u6362\u7684shell\u811a\u672c\u51fd\u6570",
       "profile": "\u53ef\u4ee5\u5feb\u901f\u5207\u6362\uff0c\u8bb0\u5f55\u5207\u6362\u5386\u53f2",
       "create_at": "2018-09-01T00:00:00",
       "update_at": "2019-11-11T00:00:00",
       "path": "static/articles/develop/linux/quick_cd.md"
+    },
+    {
+      "title": "UUID4\u6e90\u7801\u5b9e\u73b0",
+      "profile": "glib\u4e2duuid\u7684\u6e90\u7801\u5b9e\u73b0",
+      "create_at": "2021-07-11T00:00:00",
+      "update_at": "2021-07-11T00:00:00",
+      "path": "static/articles/develop/linux/uuid_glib.md"
+    },
+    {
+      "title": "extend-json\u5f00\u53d1\u5e93",
+      "profile": "\u4e00\u4e2a\u6269\u5c55JSON\u7684\u5e93",
+      "create_at": "2021-02-08T00:00:00",
+      "update_at": "2021-02-08T00:00:00",
+      "path": "static/articles/develop/linux/extend-json.md"
     },
     {
       "title": "JavaScript\u4f7f\u7528Object.defineProperty\u7ed1\u5b9a",
@@ -197,6 +211,13 @@
       "path": "static/articles/develop/blender/cmake_project.md"
     },
     {
+      "title": "python \u8017\u65f6\u4fee\u9970\u5668",
+      "profile": "\u7b80\u5355\u6d4b\u8bd5\u67d0\u4e2a\u51fd\u6570\u8c03\u7528\u65f6\u95f4\u635f\u8017",
+      "create_at": "2020-07-10T12:10:01",
+      "update_at": "2020-07-10T12:10:01",
+      "path": "static/articles/develop/python/python_func_cost.md"
+    },
+    {
       "title": "\u4e00\u4e2a\u5b8c\u6574\u7684Python\u7ed3\u6784",
       "profile": "\u4e00\u4e2a\u7b80\u5355\u7684setup.py\u7f16\u5199",
       "create_at": "2017-03-10T12:10:01",
@@ -223,6 +244,13 @@
       "create_at": "2021-05-14T00:00:00",
       "update_at": "2021-05-14T00:00:00",
       "path": "static/articles/develop/python/python_publisher.md"
+    },
+    {
+      "title": "\u5c06ass\u8f6c\u6362\u6210lrc\u7684\u547d\u4ee4\u884c\u811a\u672c",
+      "profile": "\u5c06ass\u6587\u4ef6\u8f6c\u6362\u6210lrc\u7684python\u547d\u4ee4\u884c\u811a\u672c",
+      "create_at": "2021-07-12T00:00:00",
+      "update_at": "2021-07-12T00:00:00",
+      "path": "static/articles/develop/python/ass2lrc.md"
     },
     {
       "title": "Python\u8c03\u6574JSON\u89e3\u6790",
@@ -285,6 +313,13 @@
       "create_at": "2017-03-10T12:10:01",
       "update_at": "2018-12-25T00:00:00",
       "path": "static/articles/develop/git/git_clean_history.md"
+    },
+    {
+      "title": "C# \u8868\u62bd\u8c61\u5904\u7406\u5e93",
+      "profile": "\u8868\u62bd\u8c61\u5904\u7406\u5e93",
+      "create_at": "2021-07-12T00:00:00",
+      "update_at": "2021-07-12T00:00:00",
+      "path": "static/articles/develop/csharp/CsharpData.md"
     }
   ]
 }
