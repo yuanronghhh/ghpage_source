@@ -2,7 +2,7 @@
   "title": "VIM配置文件",
   "profile": "个人VIM配置备份",
   "create_at": "2018-12-31T12:10:01",
-  "update_at": "2021-05-01T16:31:00"
+  "update_at": "2021-11-25T16:31:00"
 }
 # VIM配置文件
 
@@ -57,6 +57,8 @@ set novisualbell
 set t_vb=
 set fdm=syntax
 set t_Co=256
+" switch case 缩进问题
+set cinoptions=l1
 if has("gui_running")
   set columns=120 lines=40
 endif
@@ -156,12 +158,12 @@ let g:pymode_python = 'python3'
 let g:hexmode_xxd_options = '-p'
 
 call vundle#begin(g:vim_plugin)
-"Plugin 'https://github.com/python-mode/python-mode.git'
-Plugin 'https://github.com/majutsushi/tagbar.git'
-Plugin 'https://github.com/fidian/hexmode.git'
+Plugin 'https://github.com/python-mode/python-mode.git'
+"Plugin 'https://github.com/majutsushi/tagbar.git'
+"Plugin 'https://github.com/fidian/hexmode.git'
 "Plugin 'https://github.com/lilydjwg/colorizer.git'
 "Plugin 'https://github.com/w0rp/ale'
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 call vundle#end()
 
 if has("gui_running")

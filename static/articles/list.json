@@ -41,7 +41,7 @@
       "title": "VIM\u914d\u7f6e\u6587\u4ef6",
       "profile": "\u4e2a\u4ebaVIM\u914d\u7f6e\u5907\u4efd",
       "create_at": "2018-12-31T12:10:01",
-      "update_at": "2021-05-01T16:31:00",
+      "update_at": "2021-11-25T16:31:00",
       "path": "static/articles/record/vim_config.md"
     },
     {
@@ -69,7 +69,7 @@
       "title": "x-plore\u5728\u5b89\u5353\u5e73\u53f0\u4f9d\u7136\u5f3a\u5927",
       "profile": "\u60f3\u4ecb\u7ecd\u4e00\u4e0bx-plore\uff0c\u5f88\u5389\u5bb3\u7684\u6587\u4ef6\u7ba1\u7406\u5668\uff0c\u975e\u5e38\u65b9\u4fbf",
       "create_at": "2017-03-10T12:10:01",
-      "update_at": "2021-05-01T00:00:00",
+      "update_at": "2021-09-19T00:00:00",
       "path": "static/articles/record/x-plore.md"
     },
     {
@@ -83,7 +83,7 @@
       "title": "\u5e38\u7528\u8f6f\u4ef6\u5217\u8868",
       "profile": "\u5217\u51fa\u4e2a\u4eba\u5e38\u7528\u7684\u8f6f\u4ef6\u5217\u8868",
       "create_at": "2018-12-31T12:10:01",
-      "update_at": "2018-12-31T12:10:01",
+      "update_at": "2021-09-25T22:38:00",
       "path": "static/articles/record/software_collect.md"
     },
     {
@@ -116,6 +116,13 @@
     }
   ],
   "DEVELOP": [
+    {
+      "title": "\u8d28\u6570\u5224\u65ad\u7b97\u6cd5\u6d4b\u8bd5",
+      "profile": "is_prime\u7b97\u6cd5\u6d4b\u8bd5",
+      "create_at": "2021-02-06T12:40:00",
+      "update_at": "2021-02-06T12:40:00",
+      "path": "static/articles/develop/linux/is_prime_test.md"
+    },
     {
       "title": "NGINX\u57fa\u672c\u914d\u7f6e\u9700\u6c42",
       "profile": "\u8fd9\u91cc\u4ec5\u5217\u4e86\u5e38\u89c1\u7684NGINX\u53cd\u5411\u4ee3\u7406\u914d\u7f6e",
